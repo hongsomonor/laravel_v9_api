@@ -15,7 +15,11 @@ class RoleController extends Controller
 
     public function store(Request $request)
     {
-        return "Store function";
+        // "request-body" => $request->input("name") get only name
+        // "request-body" => $request->input() // get all json data
+        return [
+            "request-body" => $request->input() // get all json data
+        ];
     }
 
 

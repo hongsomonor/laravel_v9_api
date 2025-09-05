@@ -1,5 +1,19 @@
 - basic route : get and post
 - create controller :
     -> php artisan make:controller RoleController --api  : use for build api
+- create model :
+    -> php artisan make:model Role -m >> use -m mean also create table
+    -> table role {
+        id
+        name
+        code
+        description
+        status
+    }
+    -> php artisan make:migration add_column_to_roles_table >> use for add new column if we already migrate data
+    -> php artisan migrate >> use for migrate all data into table
+    -> php artisan migrate:reset >> use for reset all table in database
+    -> php artisan migrate:refresh >> use for refresh all data in table on database
+    -> php artisan migrate:status >> use for check status table
 
-    >>> video : route and controller (13:43)
+    >>> video : finished 45. migration and model
