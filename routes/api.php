@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RoleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // rest route
+
+/*
 Route::get("role" , function () {
 
     $price = 100;
@@ -60,3 +63,23 @@ Route::post("employees" , function () {
         "employees" => $employees
     ];
 });
+
+*/
+
+// route with controller
+Route::get("role", [RoleController::class, "index"]);
+Route::post("role", [RoleController::class, "store"]);
+Route::get("role/{id}", [RoleController::class, "show"]);
+Route::put("role/{id}", [RoleController::class, "update"]);
+Route::delete("role/{id}", [RoleController::class, "destroy"]);
+Route::post("role/changeStatus" , [RoleController::class , "changeStatus"]);
+
+/*
+    route name :
+        -> role
+        -> user
+        -> product
+        -> category
+        -> supplier
+        -> order . . .
+*/

@@ -1,0 +1,5 @@
+- basic route : get and post
+- create controller :
+    -> php artisan make:controller RoleController --api  : use for build api
+
+    >>> video : route and controller (13:43)
