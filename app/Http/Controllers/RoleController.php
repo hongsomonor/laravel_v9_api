@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
@@ -9,7 +10,8 @@ class RoleController extends Controller
 
     public function index()
     {
-        return "Role in Index function";
+        $roles = Role::all();
+        return $roles;
     }
 
 
@@ -17,8 +19,18 @@ class RoleController extends Controller
     {
         // "request-body" => $request->input("name") get only name
         // "request-body" => $request->input() // get all json data
+
+        $roles = new Role();
+        $roles->name = $request->input("name");
+        $roles->code = $request->input("code");
+        $roles->description = $request->input("description");
+        $roles->status = $request->input("status");
+        $roles->test = $request->input("test");
+
+        $roles->save();
+
         return [
-            "request-body" => $request->input() // get all json data
+            "data" => $roles
         ];
     }
 
