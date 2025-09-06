@@ -16,4 +16,4 @@
     -> php artisan migrate:refresh >> use for refresh all data in table on database
     -> php artisan migrate:status >> use for check status table
 
-    >>> video : finished 45. migration and model
+    >>> video : finished 51. insert new record roles

@@ -72,7 +72,7 @@ Route::post("role", [RoleController::class, "store"]);
 Route::get("role/{id}", [RoleController::class, "show"]);
 Route::put("role/{id}", [RoleController::class, "update"]);
 Route::delete("role/{id}", [RoleController::class, "destroy"]);
-Route::post("role/changeStatus" , [RoleController::class , "changeStatus"]);
+Route::post("role/changeStatus/{id}" , [RoleController::class , "changeStatus"]);
 
 /*
     route name :
