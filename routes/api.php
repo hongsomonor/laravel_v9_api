@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RoleController;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -66,13 +68,21 @@ Route::post("employees" , function () {
 
 */
 
-// route with controller
+// route for role
 Route::get("role", [RoleController::class, "index"]);
 Route::post("role", [RoleController::class, "store"]);
 Route::get("role/{id}", [RoleController::class, "show"]);
 Route::put("role/{id}", [RoleController::class, "update"]);
 Route::delete("role/{id}", [RoleController::class, "destroy"]);
 Route::post("role/changeStatus/{id}" , [RoleController::class , "changeStatus"]);
+
+// route for categories
+// Route::get("categories" , [CategoryController::class , "index"]);
+// Route::post("categories" , [CategoryController::class , "store"]);
+// Route::get("categories/{id}" , [CategoryController::class] , "show");
+// Route::put("categories/{id}" , [CategoryController::class] , "update");
+// Route::delete("categories/{id}" , [CategoryController::class] , "destroy");
+Route::apiResource("categories" , CategoryController::class); // this one line = 5 line on the top
 
 /*
     route name :

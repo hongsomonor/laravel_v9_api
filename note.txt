@@ -17,3 +17,13 @@
     -> php artisan migrate:status >> use for check status table
 
     >>> video : finished 51. insert new record roles
+
+
+==> CRUD Category : (id , name , description , status , parent_id)
+    -> php artisan make:model Category -m
+        -m : migration file
+    -> php artisan make:controller CategoryController --api
+    -> Route::apiResource("Categories" , CategoryController::class);
+        that apiResource use for CRUD api , auto have method of route
+        no need to define route post get put delete
+        just write one line do more
