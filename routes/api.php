@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProvinceController;
 use App\Http\Controllers\RoleController;
 use App\Models\Role;
 use Illuminate\Http\Request;
@@ -83,6 +84,10 @@ Route::post("role/changeStatus/{id}" , [RoleController::class , "changeStatus"])
 // Route::put("categories/{id}" , [CategoryController::class] , "update");
 // Route::delete("categories/{id}" , [CategoryController::class] , "destroy");
 Route::apiResource("categories" , CategoryController::class); // this one line = 5 line on the top
+
+// route for province
+
+Route::apiResource("provinces" , ProvinceController::class);
 
 /*
     route name :

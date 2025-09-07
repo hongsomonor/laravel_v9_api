@@ -16,9 +16,6 @@
     -> php artisan migrate:refresh >> use for refresh all data in table on database
     -> php artisan migrate:status >> use for check status table
 
-    >>> video : finished 51. insert new record roles
-
-
 ==> CRUD Category : (id , name , description , status , parent_id)
     -> php artisan make:model Category -m
         -m : migration file
@@ -27,3 +24,42 @@
         that apiResource use for CRUD api , auto have method of route
         no need to define route post get put delete
         just write one line do more
+
+==> CRUD Province : (id , name , code , description , distance_from_city , status)
+    -> create model and migration : php artisan make:model Province -m
+    -> create controller : php artisan make:controller ProvinceController --api
+
+    in postmain set header =>
+        Accept : application/json,
+        Content-Type : application/json
+
+>>> video : finished 56. crud category
+
+data for province :
+    | name             | code | description                                    | distance\_from\_city | status |
+    | ---------------- | ---- | ---------------------------------------------- | -------------------- | ------ |
+    | Phnom Penh       | PNH  | Capital city of Cambodia                       | 0                    | 1      |
+    | Banteay Meanchey | BMC  | Northwest province, border with Thailand       | 370                  | 1      |
+    | Battambang       | BTB  | Major rice-producing region, colonial heritage | 290                  | 1      |
+    | Kampong Cham     | KPC  | Large agricultural province along Mekong       | 124                  | 1      |
+    | Kampong Chhnang  | KCH  | Central province, Tonle Sap basin              | 91                   | 1      |
+    | Kampong Speu     | KPS  | Southwest, mountains and sugar palms           | 48                   | 1      |
+    | Kampong Thom     | KPT  | Historical temples, near Tonle Sap             | 162                  | 1      |
+    | Kampot           | KMP  | Famous for Kampot pepper, coastal area         | 148                  | 1      |
+    | Kandal           | KDL  | Surrounds Phnom Penh, industrial hub           | 11                   | 1      |
+    | Koh Kong         | KKG  | Coastal province, eco-tourism                  | 271                  | 1      |
+    | Kratie           | KRT  | Mekong dolphins, rubber plantations            | 248                  | 1      |
+    | Mondulkiri       | MDK  | Highland province, waterfalls, ethnic groups   | 382                  | 1      |
+    | Oddar Meanchey   | OMC  | Northern border with Thailand                  | 457                  | 1      |
+    | Pailin           | PLN  | Gem mining, small western province             | 290                  | 1      |
+    | Preah Vihear     | PVH  | Preah Vihear Temple, northern Cambodia         | 325                  | 1      |
+    | Prey Veng        | PVG  | Agricultural, east of Mekong                   | 90                   | 1      |
+    | Pursat           | PST  | Forestry and Tonle Sap access                  | 174                  | 1      |
+    | Ratanakiri       | RTK  | Northeastern, red soil, ethnic minorities      | 588                  | 1      |
+    | Siem Reap        | SRP  | Angkor Wat and tourism hub                     | 320                  | 1      |
+    | Preah Sihanouk   | SHN  | Coastal beaches, port city                     | 230                  | 1      |
+    | Stung Treng      | STT  | Mekong & Sekong rivers, northeast              | 455                  | 1      |
+    | Svay Rieng       | SVG  | Border trade with Vietnam                      | 122                  | 1      |
+    | Takeo            | TKO  | South, historical temples                      | 78                   | 1      |
+    | Tbong Khmum      | TBK  | Split from Kampong Cham in 2013                | 135                  | 1      |
+    | Kep              | KEP  | Smallest coastal province, famous for crab     | 161                  | 1      |
